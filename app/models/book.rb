@@ -3,8 +3,9 @@ class Book < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :book_comments, dependent: :destroy
   has_one_attached :profile_image
-  validates :title,presence:true
-  validates :body,presence:true,length:{maximum:200}
+  validates :title, presence:true
+  validates :body ,presence:true,length:{maximum:200}
+  validates :tag, presence:true
 
   scope :latest, -> {order(created_at: :desc)}
   scope :old, -> {order(created_at: :asc)}
