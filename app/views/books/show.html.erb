@@ -12,7 +12,7 @@
   		  <tr>
           <td>
             <%= link_to(@book.user) do %>
-              <%= image_tag @book.user.get_profile_image, size:"100x100" %><br>
+              <%= image_tag @book.user.get_profile_image, size:"50x50" %><br>
               <%= @book.user.name %>
             <% end %>
           </td>
@@ -26,6 +26,7 @@
             <%= render "favorites/favorite", book: @book %>
           </td>
           <td>コメント数：<span id="comment_count"><%= @book.book_comments.count %></span></td>
+          <td><%= render "books/star", book: @book %></td>
         </tr>
       </table>
       <div id="book-comments">
